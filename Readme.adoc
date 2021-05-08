@@ -1,0 +1,32 @@
+= Giới thiệu đơn giản về dependency injection
+
+== Loại DI phổ biến thường sử dụng:
+
+----
+1. Constructor DI
+
+2. Setter DI
+----
+
+Thay vì khởi tạo trực tiếp các biến phụ thuộc trong class thực hiện, ta truyền các phục thuộc vào thông qua Constructor hoăc Setter.
+
+Lợi ích có thế thấy được đó là:
+
+----
+1. Bạn có thể quyết định dùng implement nào khi xử lý thay vì quyết định khi viết class.
+
+Ví dụ: Bạn cần lưu trữ và Database nhưng khi code chưa quyết định vào DB nào. Thì chỉ cần viết interface với hàm `save` và khi vào dự án có thể quyết định dùng impl nào, có thể là racle, MySQL ...
+
+2. Unit test dễ dàng hơn bằng cách mockup các dependency và injection thông qua constructor hoặc setter
+
+----
+
+Nhược điểm:
+
+----
+Phức tạp hơn khi tìm hiểu logic xử lý. Do việc dùng implement nào được truyền vào trong quá trình runtime.
+----
+
+Đây chỉ là một demo đơn giản. Ngoài các loại injection trên thì còn có thể inject thông qua reflection và abstract method ...
+
+Trong các loại DI thì Constructor DI hiện tại khá phổ biến và được khuyên dùng.
